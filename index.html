@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>猫和老鼠 · 聊天小屋</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ================= BACKGROUND: 1940s cartoon living room (hand-drawn SVG) ================= -->
+<svg id="bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<defs>
+  <pattern id="wp" width="90" height="130" patternUnits="userSpaceOnUse">
+    <rect width="90" height="130" fill="#f0dba8"/>
+    <rect x="0" width="16" height="130" fill="#e7cb8f"/>
+    <rect x="44" width="3" height="130" fill="#e4c588"/>
+    <g transform="translate(68,34)">
+      <g fill="#cf7f62" opacity=".7"><circle cx="0" cy="-6" r="4.5"/><circle cx="6" cy="0" r="4.5"/><circle cx="0" cy="6" r="4.5"/><circle cx="-6" cy="0" r="4.5"/></g>
+      <circle r="3" fill="#f6e2a0"/><path d="M-3,10 Q-10,18 -16,16 M3,10 Q10,18 15,15" stroke="#7f9a68" stroke-width="2" fill="none" opacity=".7"/>
+    </g>
+    <g transform="translate(68,98) scale(.6)" fill="#89a873" opacity=".6"><path d="M0,-10 Q8,0 0,10 Q-8,0 0,-10Z"/></g>
+  </pattern>
+  <linearGradient id="wallShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3518" stop-opacity=".28"/><stop offset=".35" stop-color="#5a3518" stop-opacity="0"/></linearGradient>
+  <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f522b"/><stop offset="1" stop-color="#6a3a1d"/></linearGradient>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ee"/><stop offset="1" stop-color="#d9f1fb"/></linearGradient>
+  <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff3b0" stop-opacity=".55"/><stop offset="1" stop-color="#fff3b0" stop-opacity="0"/></radialGradient>
+  <radialGradient id="vig" cx=".5" cy=".45" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#2a160a" stop-opacity=".45"/></radialGradient>
+  <linearGradient id="chairG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b83b2e"/><stop offset="1" stop-color="#8e2a22"/></linearGradient>
+</defs>
+<rect width="1600" height="740" fill="url(#wp)"/>
+<rect width="1600" height="740" fill="url(#wallShade)"/>
+<rect y="540" width="1600" height="16" fill="#9c6436"/>
+<rect y="556" width="1600" height="150" fill="#c99b5f"/>
+<g fill="none" stroke="#a87943" stroke-width="4">
+  <rect x="30" y="576" width="230" height="110" rx="6"/><rect x="290" y="576" width="230" height="110" rx="6"/><rect x="550" y="576" width="230" height="110" rx="6"/>
+  <rect x="810" y="576" width="230" height="110" rx="6"/><rect x="1070" y="576" width="230" height="110" rx="6"/><rect x="1330" y="576" width="230" height="110" rx="6"/>
+</g>
+<rect y="704" width="1600" height="36" fill="#f3e7cc" stroke="#7a5534" stroke-width="3"/>
+<rect y="740" width="1600" height="160" fill="url(#floorG)"/>
+<g stroke="#5a2f15" stroke-width="2.5" opacity=".7">
+  <line x1="0" y1="772" x2="1600" y2="772"/><line x1="0" y1="808" x2="1600" y2="808"/><line x1="0" y1="848" x2="1600" y2="848"/>
+  <line x1="180" y1="740" x2="180" y2="772"/><line x1="620" y1="740" x2="620" y2="772"/><line x1="1080" y1="740" x2="1080" y2="772"/><line x1="1500" y1="740" x2="1500" y2="772"/>
+  <line x1="390" y1="772" x2="390" y2="808"/><line x1="860" y1="772" x2="860" y2="808"/><line x1="1290" y1="772" x2="1290" y2="808"/>
+  <line x1="90" y1="808" x2="90" y2="848"/><line x1="560" y1="808" x2="560" y2="848"/><line x1="1180" y1="808" x2="1180" y2="848"/>
+  <line x1="300" y1="848" x2="300" y2="900"/><line x1="980" y1="848" x2="980" y2="900"/><line x1="1420" y1="848" x2="1420" y2="900"/>
+</g>
+<g stroke="#b06c3c" stroke-width="2" opacity=".5"><line x1="0" y1="775" x2="1600" y2="775"/><line x1="0" y1="811" x2="1600" y2="811"/><line x1="0" y1="851" x2="1600" y2="851"/></g>
+<g>
+  <path d="M1178,740 L1178,676 A44,48 0 0 1 1266,676 L1266,740 Z" fill="#f6ecd6" stroke="#7a5534" stroke-width="4"/>
+  <path d="M1188,740 L1188,680 A34,38 0 0 1 1256,680 L1256,740 Z" fill="#1a100b"/>
+  <path d="M1200,740 L1200,700 A22,24 0 0 1 1244,700 L1244,740 Z" fill="#2a1a10" opacity=".7"/>
+  <ellipse cx="1222" cy="746" rx="40" ry="5" fill="#b8473c" stroke="#5a2f15" stroke-width="2"/>
+</g>
+<g>
+  <rect x="140" y="130" width="250" height="300" fill="url(#sky)" stroke="#5a3a22" stroke-width="5"/>
+  <path d="M140,360 Q200,330 260,350 Q330,325 390,345 L390,430 L140,430Z" fill="#9ccf7a"/>
+  <ellipse cx="300" cy="200" rx="40" ry="15" fill="#fff" opacity=".9"/><ellipse cx="330" cy="192" rx="28" ry="13" fill="#fff" opacity=".9"/>
+  <ellipse cx="200" cy="240" rx="30" ry="10" fill="#fff" opacity=".8"/>
+  <rect x="140" y="130" width="250" height="300" fill="none" stroke="#f7f1e3" stroke-width="14"/>
+  <line x1="265" y1="130" x2="265" y2="430" stroke="#f7f1e3" stroke-width="10"/><line x1="140" y1="280" x2="390" y2="280" stroke="#f7f1e3" stroke-width="10"/>
+  <rect x="126" y="428" width="278" height="16" rx="4" fill="#f7f1e3" stroke="#7a5534" stroke-width="3"/>
+  <path d="M100,108 Q120,300 92,470 Q130,480 168,468 Q150,300 196,124 Z" fill="#d9534f" stroke="#7a2320" stroke-width="3"/>
+  <path d="M430,108 Q410,300 438,470 Q400,480 362,468 Q380,300 334,124 Z" fill="#d9534f" stroke="#7a2320" stroke-width="3"/>
+  <g fill="#f6e2a0" opacity=".8"><circle cx="130" cy="180" r="5"/><circle cx="150" cy="260" r="5"/><circle cx="125" cy="340" r="5"/><circle cx="140" cy="420" r="5"/>
+    <circle cx="400" cy="180" r="5"/><circle cx="380" cy="260" r="5"/><circle cx="405" cy="340" r="5"/><circle cx="390" cy="420" r="5"/></g>
+  <path d="M86,96 L444,96 L444,124 Q400,148 355,124 Q310,148 265,124 Q220,148 175,124 Q130,148 86,124Z" fill="#b8382f" stroke="#7a2320" stroke-width="3"/>
+</g>
+<g>
+  <ellipse cx="800" cy="210" rx="96" ry="76" fill="#d4a24c" stroke="#7a5534" stroke-width="4"/>
+  <ellipse cx="800" cy="210" rx="78" ry="60" fill="#cfe8d8"/>
+  <path d="M722,226 Q760,180 800,214 Q840,170 878,214 L878,240 Q800,280 722,240Z" fill="#7fae6a"/>
+  <circle cx="830" cy="180" r="12" fill="#f8d36b"/>
+  <ellipse cx="800" cy="210" rx="78" ry="60" fill="none" stroke="#a87943" stroke-width="5"/>
+  <path d="M800,134 L780,96 M800,134 L820,96" stroke="#5a3a22" stroke-width="2"/><circle cx="800" cy="94" r="5" fill="#5a3a22"/>
+</g>
+<ellipse cx="1430" cy="560" rx="260" ry="320" fill="url(#glow)"/>
+<g>
+  <ellipse cx="1430" cy="760" rx="56" ry="12" fill="#3b2a1e"/>
+  <rect x="1424" y="330" width="12" height="430" fill="#6b4a2c" stroke="#3b2a1e" stroke-width="2"/>
+  <path d="M1350,330 L1380,230 L1480,230 L1510,330 Z" fill="#f6dc8e" stroke="#7a5534" stroke-width="4"/>
+  <path d="M1350,330 Q1360,344 1370,330 Q1380,344 1390,330 Q1400,344 1410,330 Q1420,344 1430,330 Q1440,344 1450,330 Q1460,344 1470,330 Q1480,344 1490,330 Q1500,344 1510,330" fill="none" stroke="#c8892e" stroke-width="4"/>
+  <path d="M1380,250 L1480,250" stroke="#e7c06a" stroke-width="5"/>
+</g>
+<g>
+  <path d="M190,600 Q190,500 330,496 Q470,500 470,600 L470,700 L190,700Z" fill="url(#chairG)" stroke="#4d1712" stroke-width="5"/>
+  <path d="M220,610 Q330,590 440,610 L440,690 L220,690Z" fill="#a8332a" stroke="#4d1712" stroke-width="4"/>
+  <path d="M150,640 Q150,600 190,600 Q232,600 232,640 L232,760 L150,760Z" fill="#c4433a" stroke="#4d1712" stroke-width="5"/>
+  <path d="M428,640 Q428,600 470,600 Q510,600 510,640 L510,760 L428,760Z" fill="#a8332a" stroke="#4d1712" stroke-width="5"/>
+  <rect x="226" y="686" width="208" height="60" rx="10" fill="#b83b2e" stroke="#4d1712" stroke-width="5"/>
+  <g fill="#f3c86a" opacity=".55"><circle cx="270" cy="545" r="5"/><circle cx="330" cy="530" r="5"/><circle cx="390" cy="545" r="5"/><circle cx="300" cy="580" r="5"/><circle cx="360" cy="580" r="5"/></g>
+  <path d="M160,760 L156,790 M500,760 L504,790 M240,746 L238,780 M420,746 L422,780" stroke="#3b2a1e" stroke-width="10" stroke-linecap="round"/>
+</g>
+<g>
+  <ellipse cx="1030" cy="742" rx="38" ry="8" fill="#3b2a1e" opacity=".6"/>
+  <path d="M1022,618 L1016,738 L1044,738 L1038,618 Z" fill="#8a5a33" stroke="#3b2a1e" stroke-width="3"/>
+  <ellipse cx="1030" cy="736" rx="34" ry="7" fill="#7a4a28" stroke="#3b2a1e" stroke-width="3"/>
+  <ellipse cx="1030" cy="616" rx="66" ry="14" fill="#a8703f" stroke="#3b2a1e" stroke-width="4"/>
+  <path d="M964,616 L964,626 Q1030,646 1096,626 L1096,616" fill="#8a5a33" stroke="#3b2a1e" stroke-width="3"/>
+  <circle cx="1030" cy="570" r="40" fill="#bfe6f3" fill-opacity=".85" stroke="#4b6b78" stroke-width="4"/>
+  <path d="M994,560 Q1030,550 1066,560 L1066,600 Q1030,618 994,600 Z" fill="#7cc6e2" opacity=".6"/>
+  <ellipse cx="1030" cy="532" rx="24" ry="6" fill="#e9f7fb" stroke="#4b6b78" stroke-width="3"/>
+  <g transform="translate(1030 580)"><path d="M-12,0 Q0,-12 12,0 Q0,12 -12,0Z" fill="#f28a2e" stroke="#7a3a10" stroke-width="2"/><path d="M12,0 L22,-8 L22,8Z" fill="#f28a2e" stroke="#7a3a10" stroke-width="2"/><circle cx="-5" cy="-2" r="2" fill="#1e1a1a"/></g>
+  <path d="M1004,548 Q1010,536 1022,534" fill="none" stroke="#fff" stroke-width="4" opacity=".8"/>
+</g>
+<ellipse cx="800" cy="822" rx="470" ry="62" fill="#9b342b" stroke="#4d1712" stroke-width="4"/>
+<ellipse cx="800" cy="822" rx="430" ry="48" fill="none" stroke="#e8b85c" stroke-width="5" stroke-dasharray="18 10"/>
+<ellipse cx="800" cy="822" rx="380" ry="36" fill="#b5443a"/>
+<ellipse cx="800" cy="822" rx="250" ry="22" fill="none" stroke="#e8b85c" stroke-width="3"/>
+<rect width="1600" height="900" fill="url(#vig)"/>
+</svg>
+<div id="stage">
+  <div id="title" title="双击或长按：设置">猫和老鼠 · 聊天小屋<small>Tom &amp; Jerry 风格同人小游戏</small></div>
+  <button id="modelChip" title="选择模型"><span class="dot"></span><span id="modelName">gpt-4o-mini</span><svg viewBox="0 0 12 12" width="10" height="10"><path d="M2 4l4 4 4-4" fill="none" stroke="#2b2320" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <button id="gear" aria-label="设置" title="设置">
+    <svg viewBox="0 0 24 24" fill="#fff8e6" stroke="#2b2320" stroke-width="1.2"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8.2 5-.1-3 2-1.6-2-3.4-2.4.9-2.6-1.5L12.7 1H8.8l-.4 2.6-2.6 1.5-2.4-.9-2 3.4 2 1.6v3l-2 1.6 2 3.4 2.4-.9 2.6 1.5.4 2.6h3.9l.4-2.6 2.6-1.5 2.4.9 2-3.4z" transform="translate(1 0)"/></svg>
+  </button>
+
+  <div id="charSlot" hidden></div>
+  <div class="nametag" id="nametag">汤姆</div>
+  <div id="talk"></div>
+</div>
+
+<div id="rec"><div id="wave"></div><div id="recText"></div><div id="recHint">松开 发送 · 上滑 取消</div></div>
+<div id="toast"></div>
+
+<!-- bottom bar: the only on-screen controls -->
+<div id="bar">
+  <button class="ib" id="modeBtn" aria-label="切换输入方式" title="输入文本 / 按住说话"></button>
+  <button id="hold">按住 说话</button>
+  <div id="textwrap"><input id="txt" type="text" placeholder="输入文本…" maxlength="500" autocomplete="off"><button id="sendBtn">发送</button></div>
+  <button id="swap" title="切换角色"><svg viewBox="0 0 24 24" fill="none" stroke="#2b2320" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><span>切换角色</span></button>
+</div>
+
+<!-- model picker popover (shared by the top chip and the settings overlay) -->
+<div id="mpick"><div class="mp-head"><input id="mpQ" type="text" spellcheck="false" autocomplete="off" placeholder="搜索或输入模型 ID…"><button id="mpRefresh" title="重新获取模型列表">↻</button></div><div id="mpList"></div><div id="mpFoot"></div></div>
+
+<!-- setup overlay (one-time; reopen via double-click / long-press title, or tiny gear) -->
+<div id="setup">
+  <div class="card">
+    <button class="x" id="setupClose" aria-label="关闭">×</button>
+    <h2>🧀 欢迎来到聊天小屋</h2>
+    <p class="sub">请填写 OpenAI 兼容接口信息（只保存在本机浏览器）。</p>
+    <label for="cfgBase">API 地址（Base URL）</label>
+    <input id="cfgBase" type="text" spellcheck="false" placeholder="https://aihubmix.com/v1">
+    <label for="cfgKey">API Key</label>
+    <div class="keyrow"><input id="cfgKey" type="password" spellcheck="false" placeholder="sk-..."><button id="eyeBtn" type="button">显示</button></div>
+    <label for="cfgModel">模型</label>
+    <div class="keyrow"><input id="cfgModel" type="text" spellcheck="false" placeholder="gpt-4o-mini" style="padding-right:74px"><button id="cfgModelPick" type="button">选择 ▾</button></div>
+    <button class="go" id="setupSave">保存并开始</button>
+    <div class="row2" id="setupExtra"><button id="clearCur">清空当前角色记录</button><button id="clearAll">清空全部记录</button></div>
+    <div class="note">提示：以后双击（或长按）左上角标题、或点右上角小齿轮，可再次打开此设置；点标题下方的模型名可随时切换模型。语音识别使用浏览器自带功能（推荐 Chrome / Edge），需要联网与麦克风权限。</div>
+  </div>
+</div>
+<script src="characters.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
